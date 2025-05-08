@@ -7,9 +7,41 @@ const String c3 = 'asset/c3.jpeg';
 const String p1 = 'asset/product/p1.png';
 const String p2 = 'asset/product/p2.png';
 
-const String p3 = 'asset/product/p3.png';
 
-const String p4 = 'asset/product/p4.png';
+
+const String bag1 = 'asset/product/bag1.jpeg';
+const String bag2 = 'asset/product/bag2.jpeg';
+const String bag3 = 'asset/product/bag3.jpeg';
+const String bag4 = 'asset/product/bag4.jpeg';
+const String bag5 = 'asset/product/bag5.png';
+//headPhone image
+const String headphone1 = 'asset/product/headphone1.png';
+const String headphone2 = 'asset/product/headphone2.png';
+const String headphone3 = 'asset/product/headphone3.png';
+const String headphone4 = 'asset/product/headphone4.png';
+const String headphone5 = 'asset/product/headphone5.png';
+//Keyboard image
+
+const String keyboard1 = 'asset/product/keyboard1.png';
+const String keyboard2 = 'asset/product/keyboard2.png';
+const String keyboard3 = 'asset/product/keyboard3.png';
+const String keyboard4 = 'asset/product/keyboard4.png';
+const String keyboard5 = 'asset/product/keyboard5.png';
+
+const String laptop1 = 'asset/product/laptop1.png';
+const String laptop2 = 'asset/product/laptop2.png';
+const String laptop3 = 'asset/product/laptop3.png';
+const String laptop4 = 'asset/product/laptop4.png';
+const String laptop5 = 'asset/product/laptop5.png';
+
+const String mouse1 = 'asset/product/mouse1.png';
+const String mouse2 = 'asset/product/mouse2.png';
+
+const String screen1 = 'asset/product/screen1.png';
+const String screen2 = 'asset/product/screen2.png';
+const String screen3 = 'asset/product/screen3.png';
+const String screen4 = 'asset/product/screen4.png';
+const String screen5 = 'asset/product/screen5.png';
 
 // product Detail images
 
