@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:tech_accessories_app/core/utils/appStyle.dart';
 import 'package:tech_accessories_app/core/utils/const.dart';
 import 'package:tech_accessories_app/core/utils/image.dart';
+import 'package:tech_accessories_app/core/utils/page_transition.dart';
 import 'package:tech_accessories_app/core/utils/size_extension.dart';
+import 'package:tech_accessories_app/views/detail_view/detail_screen.dart';
 import 'package:tech_accessories_app/views/widget/carouselWidget.dart';
-import 'package:tech_accessories_app/widget/appGradientWidget.dart';
+import 'package:tech_accessories_app/components/appGradientWidget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,8 +21,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final CarouselSliderController _controller = CarouselSliderController();
-  int _currentIndex = 0;
+ 
   final List<String> list = [c1, c2, c3]; //imag path
   @override
   Widget build(BuildContext context) {
@@ -114,47 +114,54 @@ class _HomeScreenState extends State<HomeScreen> {
                 return Padding(
                   padding: EdgeInsetsGeometry.symmetric(horizontal: 10),
                   child: FadeInRight(
-                    delay: Duration(milliseconds: 300 +index* 500),
-                    child: Appgradientwidget(
-                     padding: EdgeInsets.only(left: 10),
-                     margin: EdgeInsets.only(left: 10),
-                      borderRadius: 30,
-                      height: 24.h,
-                      width: 33.w,
-                      child: Padding(
-                        padding:  EdgeInsets.symmetric(horizontal: 10),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            3.vSpace,
-                            Align(
-                              alignment: Alignment.bottomRight,
-                              child: SizedBox(
-                                height: 12.h,
-                                width: 100.w,
-                                child: Image.asset(item.imagePath),
+                    delay: Duration(milliseconds: 300 +index* 100),
+                    child: GestureDetector(
+                      onTap:(){
+                         slideTransition(context,DetailScreen(product: item,));
+                      },
+                      child: Appgradientwidget(
+                       padding: EdgeInsets.only(left: 10),
+                       margin: EdgeInsets.only(left: 10),
+                        borderRadius: 30,
+                        height: 30.h,
+                        width: 33.w,
+                        child: Padding(
+                          padding:  EdgeInsets.symmetric(horizontal: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              3.vSpace,
+                              Align(
+                                alignment: Alignment.bottomRight,
+                                child: SizedBox(
+                                  height: 12.h,
+                                  width: 100.w,
+                                  child: Hero(
+                                    tag: item.imagePath,
+                                    child:  Image.asset(item.imagePath)),
+                                ),
                               ),
-                            ),
-                            Text(
-                              item.title,
-                              style: subtitleStyle(
-                                context,
-                              ).copyWith(color: Colors.grey[400]),
-                            ),
-                            Text(
-                              item.subtitle,
-                              style: GoogleFonts.kanit(
-                                color: Colors.white,
-                                fontSize: 15.sp,
+                              Text(
+                                item.title,
+                                style: subtitleStyle(
+                                  context,
+                                ).copyWith(color: Colors.grey[400]),
                               ),
-                            ),
-                            Text(
-                              '\$${item.price}0',
-                              style: subtitleStyle(
-                                context,
-                              ).copyWith(color: Colors.grey[400]),
-                            ),
-                          ],
+                              Text(
+                                item.subtitle,
+                                style: GoogleFonts.kanit(
+                                  color: Colors.white,
+                                  fontSize: 15.sp,
+                                ),
+                              ),
+                              Text(
+                                '\$${item.price}0',
+                                style: subtitleStyle(
+                                  context,
+                                ).copyWith(color: Colors.grey[400]),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

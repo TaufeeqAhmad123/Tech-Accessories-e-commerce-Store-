@@ -9,11 +9,11 @@ const String p2 = 'asset/product/p2.png';
 
 
 
-const String bag1 = 'asset/product/bag1.jpeg';
-const String bag2 = 'asset/product/bag2.jpeg';
-const String bag3 = 'asset/product/bag3.jpeg';
-const String bag4 = 'asset/product/bag4.jpeg';
-const String bag5 = 'asset/product/bag5.png';
+const String fan = 'asset/product/fan.png';
+const String fan2 = 'asset/product/fan.png';
+const String cpu = 'asset/product/cpu.png';
+const String cpu1 = 'asset/product/cpu1.png';
+const String card = 'asset/product/card.png';
 //headPhone image
 const String headphone1 = 'asset/product/headphone1.png';
 const String headphone2 = 'asset/product/headphone2.png';

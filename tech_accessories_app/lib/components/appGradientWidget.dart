@@ -8,7 +8,15 @@ class Appgradientwidget extends StatelessWidget {
   EdgeInsetsGeometry? padding = const EdgeInsets.all(0);
   EdgeInsetsGeometry? margin = const EdgeInsets.all(0);
   final Widget child;
-  Appgradientwidget({super.key, this.height, this.width, required this.child, required EdgeInsets padding, required EdgeInsets margin, required int borderRadius});
+  Appgradientwidget( {
+    super.key,
+    this.height,
+    this.width,
+    required this.child,
+    this.padding,
+    this.margin,
+    this.borderRadius,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +33,7 @@ class Appgradientwidget extends StatelessWidget {
             const Color.fromARGB(255, 11, 11, 11).withOpacity(0.9),
             Colors.black.withOpacity(0.9),
           ],
-          stops: const [0.0, 0.4, 0.8],
+          //stops: const [0.0, 0.4, 0.8],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
